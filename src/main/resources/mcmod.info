@@ -1,0 +1,16 @@
+[
+{
+  "modid": "configurablebeacons",
+  "name": "Configurable Beacons",
+  "description": "Customize how beacons work.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ephys"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
