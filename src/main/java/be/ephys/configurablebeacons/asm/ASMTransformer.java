@@ -19,8 +19,6 @@ public class ASMTransformer implements IClassTransformer {
     }
 
     public byte[] patchBeacon(String name, byte[] bytes, boolean obfuscated) {
-        System.out.println();
-        System.out.println("==============+ BEACON FOUND =============");
         String addEffectsToPlayers;
         if (obfuscated) {
             addEffectsToPlayers = "func_178003_a"; // TODO
@@ -40,8 +38,6 @@ public class ASMTransformer implements IClassTransformer {
                 break;
             }
         }
-
-        System.out.println();
 
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         classNode.accept(writer);
