@@ -21,7 +21,7 @@ public class ASMTransformer implements IClassTransformer {
     public byte[] patchBeacon(String name, byte[] bytes, boolean obfuscated) {
         String addEffectsToPlayers;
         if (obfuscated) {
-            addEffectsToPlayers = "func_178003_a"; // TODO
+            addEffectsToPlayers = "func_174908_m";
         } else {
             addEffectsToPlayers = "updateBeacon";
         }
@@ -74,7 +74,7 @@ public class ASMTransformer implements IClassTransformer {
             // replace
             // INVOKESPECIAL net/minecraft/tileentity/TileEntityBeacon.addEffectsToPlayers ()V
             // with our hook
-            if (callNode.name.equals("addEffectsToPlayers")) {
+            if (callNode.name.equals("addEffectsToPlayers") || callNode.name.equals("func_146000_x")) {
                 code.set(callNode, method);
             }
         }
