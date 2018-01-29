@@ -5,15 +5,15 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'org.ajoberstar:gradle-git:0.10.1'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-
-version = "1.0.0"
-group = "be.ephys.configurablebeacons" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "configurablebeacons"
+version = "${mc_version}-${mod_version}"
+group = package_group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = mod_name
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -23,6 +23,9 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.1.2555"
     runDir = "run"
+
+    replaceIn "ConfigurableBeacons.java"
+    replace "@VERSION@", mod_version
 
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
@@ -76,17 +79,26 @@ processResources {
     }
 }
 
+import org.ajoberstar.grgit.Grgit
+
+def gitHash = 'unknown'
+if (new File(projectDir, '.git').exists()) {
+    def repo = Grgit.open(project.file('.'))
+    gitHash = repo.log().find().abbreviatedId
+}
+
 minecraft.coreMod = "be.ephys.configurablebeacons.asm.FMLPlugin"
 
 jar {
     manifest {
-        attributes 'FMLCorePlugin': "be.ephys.configurablebeacons.asm.FMLPlugin", 'FMLCorePluginContainsFMLMod': true
+        mainAttributes(
+                "Built-By": System.getProperty('user.name'),
+                "Created-By": "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.version,
+                "Git-Hash": gitHash
+        )
+
+        attributes 'FMLCorePlugin': minecraft.coreMod, 'FMLCorePluginContainsFMLMod': true
     }
 }
-
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
-}
-
-tasks.build.dependsOn deobfJar
