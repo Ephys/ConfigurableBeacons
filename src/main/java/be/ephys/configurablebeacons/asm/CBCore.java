@@ -21,7 +21,7 @@ public class CBCore extends DummyModContainer {
         ModMetadata meta = getMetadata();
         meta.modId = "configurablebeaconscore";
         meta.name = "Configurable Beacons Core";
-        meta.version = "1.0.0";
+        meta.version = "@VERSION@";
         meta.credits = "";
         meta.authorList = Collections.singletonList("Ephys");
         meta.description = "Coremod to hook into beacon logic.";

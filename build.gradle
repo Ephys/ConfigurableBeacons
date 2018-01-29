@@ -28,6 +28,9 @@ minecraft {
     replace "@VERSION@", mod_version
     replace "@FINGERPRINT@", project.findProperty('mcSignSHA1')
 
+    replaceIn "CBCore.java"
+    replace "@VERSION@", mod_version
+
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
