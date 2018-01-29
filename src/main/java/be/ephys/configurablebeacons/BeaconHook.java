@@ -1,5 +1,6 @@
 package be.ephys.configurablebeacons;
 
+import be.ephys.cookiecore.config.Config;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,11 +13,16 @@ import java.util.List;
 
 public class BeaconHook {
 
+    @Config(description = "What is the base range?")
     public static int baseRange = 10;
+
+    @Config(description = "How many blocks are added to the range per level?")
     public static int rangeStep = 10;
 
+    @Config(description = "Spawn particles around the player when an effect is active")
     public static boolean showParticles = true;
 
+    @Config(description = "How the range is altered vertically. Java = Vanilla Java Behavior. Bedrock = Vanilla Bedrock behavior. FullHeight = expand vertical range to maximum")
     public static VerticalRangeType verticalRangeType = VerticalRangeType.Java;
 
     public enum VerticalRangeType {
