@@ -5,7 +5,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = ConfigurableBeacons.MODID, version = ConfigurableBeacons.VERSION, serverSideOnly = true, clientSideOnly = true)
+@Mod(
+    modid = ConfigurableBeacons.MODID,
+    version = ConfigurableBeacons.VERSION,
+    serverSideOnly = true,
+    clientSideOnly = true,
+    certificateFingerprint = "@FINGERPRINT@"
+)
 public class ConfigurableBeacons
 {
     public static final String MODID = "configurablebeacons";
