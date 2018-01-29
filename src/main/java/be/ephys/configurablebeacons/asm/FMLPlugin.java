@@ -6,7 +6,7 @@ import java.util.Map;
 
 @IFMLLoadingPlugin.TransformerExclusions({"be.ephys.configurablebeacons"})
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-//@IFMLLoadingPlugin.SortingIndex(65536)
+@IFMLLoadingPlugin.SortingIndex(65536)
 public class FMLPlugin implements IFMLLoadingPlugin {
 
     @Override
