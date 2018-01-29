@@ -10,7 +10,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
     version = ConfigurableBeacons.VERSION,
     serverSideOnly = true,
     clientSideOnly = true,
-    certificateFingerprint = "@FINGERPRINT@"
+    certificateFingerprint = "@FINGERPRINT@",
+    dependencies="required-after:cookiecore@[2.0.0,);"
 )
 public class ConfigurableBeacons
 {
