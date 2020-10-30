@@ -102,10 +102,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.2-33.0.22'
+    minecraft 'net.minecraftforge:forge:1.16.1-32.0.108'
 
     // https://github.com/Ephys/CookieCore/packages/102415
-    compile fg.deobf('be.ephys.cookiecore:cookiecore:1.16.2-3.0.0-4d69840d')
+    compile fg.deobf('be.ephys.cookiecore:cookiecore:1.16.1-2.9.0-fd37e68d')
 }
 
 import org.ajoberstar.grgit.Grgit
