@@ -9,11 +9,11 @@ issueTrackerURL="https://github.com/Ephys/ConfigurableBeacons/issues?q=is%3Aissu
 [[mods]]
 modId="configurablebeacons"
 
-version="${file.jarVersion}" #mandatory
+version="${jarVersion}"
 
 displayName="Configurable Beacons"
 
-#updateJSONURL="http://myurl.me/" #optional
+updateJSONURL="https://mc-curse-update-checker.herokuapp.com/286506"
 
 displayURL="https://www.curseforge.com/minecraft/mc-mods/configurable-beacons"
 
@@ -37,6 +37,6 @@ Configurable Beacons is a proof of concept mod that lets your change some aspect
 [[dependencies.configurablebeacons]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16,)"
+    versionRange="[1.16.2,)"
     ordering="NONE"
     side="BOTH"
