@@ -2,7 +2,7 @@
   "minVersion": "0.8",
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "refmap": "shulker_enchantments.mixins.refmap.json",
+  "refmap": "configurablebeacons.mixins.refmap.json",
   "package": "be.ephys.configurablebeacons.mixins",
   "mixins": [
     "BeaconTileEntityMixin"
