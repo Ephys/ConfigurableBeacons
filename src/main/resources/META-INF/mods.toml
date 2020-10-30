@@ -1,28 +1,17 @@
 modLoader="javafml"
-
 loaderVersion="[33,)"
-
 license="MIT"
-
 issueTrackerURL="https://github.com/Ephys/ConfigurableBeacons/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
 
 [[mods]]
 modId="configurablebeacons"
-
 version="${jarVersion}"
-
 displayName="Configurable Beacons"
-
 updateJSONURL="https://mc-curse-update-checker.herokuapp.com/286506"
-
 displayURL="https://www.curseforge.com/minecraft/mc-mods/configurable-beacons"
-
 logoFile="logo.png"
-
 #credits=""
-
 authors="ephys, eizhfox"
-
 description='''
 Configurable Beacons is a proof of concept mod that lets your change some aspects of how beacons work.
 '''
